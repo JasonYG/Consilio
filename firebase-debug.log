@@ -1,0 +1,100 @@
+[debug] [2018-09-15T20:04:11.072Z] ----------------------------------------------------------------------
+[debug] [2018-09-15T20:04:11.074Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-09-15T20:04:11.074Z] CLI Version:   4.2.1
+[debug] [2018-09-15T20:04:11.074Z] Platform:      darwin
+[debug] [2018-09-15T20:04:11.074Z] Node Version:  v8.12.0
+[debug] [2018-09-15T20:04:11.075Z] Time:          Sat Sep 15 2018 16:04:11 GMT-0400 (EDT)
+[debug] [2018-09-15T20:04:11.075Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-15T20:04:11.082Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-15T20:04:11.083Z] > authorizing via signed-in user
+[debug] [2018-09-15T20:04:11.084Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-15T20:04:11.084Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-09-15T20:04:11.331Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T20:04:11.339Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hack-the-north-c24de  
+ 
+[debug] [2018-09-15T20:04:11.554Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T20:04:11.555Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hack-the-north-c24de  
+ 
+[debug] [2018-09-15T20:04:11.855Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/jasonguo/Documents/Programming/Hack-the-North'...
+[info] 
+[debug] [2018-09-15T20:04:12.435Z] Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/logs'
+    at Object.fs.mkdirSync (fs.js:885:18)
+    at Object.assertLogsPath (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/logs.js:65:10)
+    at new Controller (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/cli/controller.js:77:32)
+    at FunctionsEmulator.start (/usr/local/lib/node_modules/firebase-tools/lib/functionsEmulator.js:113:21)
+    at Object.start (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:9:29)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:17:21
+    at arrayMap (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:639:23)
+    at Function.map (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:9556:14)
+    at _serve (/usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:15:7)
+    at Command._action (/usr/local/lib/node_modules/firebase-tools/commands/serve.js:48:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-09-15T20:04:15.292Z] ----------------------------------------------------------------------
+[debug] [2018-09-15T20:04:15.294Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-09-15T20:04:15.295Z] CLI Version:   4.2.1
+[debug] [2018-09-15T20:04:15.295Z] Platform:      darwin
+[debug] [2018-09-15T20:04:15.295Z] Node Version:  v8.12.0
+[debug] [2018-09-15T20:04:15.295Z] Time:          Sat Sep 15 2018 16:04:15 GMT-0400 (EDT)
+[debug] [2018-09-15T20:04:15.295Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-15T20:04:15.306Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-15T20:04:15.306Z] > authorizing via signed-in user
+[debug] [2018-09-15T20:04:15.308Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hack-the-north-c24de  
+ 
+[debug] [2018-09-15T20:04:15.579Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T20:04:15.581Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hack-the-north-c24de  
+ 
+[debug] [2018-09-15T20:04:15.952Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/jasonguo/Documents/Programming/Hack-the-North'...
+[info] 
+[debug] [2018-09-15T20:04:16.467Z] Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/logs'
+    at Object.fs.mkdirSync (fs.js:885:18)
+    at Object.assertLogsPath (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/logs.js:65:10)
+    at new Controller (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/cli/controller.js:77:32)
+    at FunctionsEmulator.start (/usr/local/lib/node_modules/firebase-tools/lib/functionsEmulator.js:113:21)
+    at Object.start (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:9:29)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:17:21
+    at arrayMap (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:639:23)
+    at Function.map (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:9556:14)
+    at _serve (/usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:15:7)
+    at Command._action (/usr/local/lib/node_modules/firebase-tools/commands/serve.js:48:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-09-15T20:04:38.174Z] ----------------------------------------------------------------------
+[debug] [2018-09-15T20:04:38.177Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-09-15T20:04:38.177Z] CLI Version:   4.2.1
+[debug] [2018-09-15T20:04:38.177Z] Platform:      darwin
+[debug] [2018-09-15T20:04:38.177Z] Node Version:  v8.12.0
+[debug] [2018-09-15T20:04:38.178Z] Time:          Sat Sep 15 2018 16:04:38 GMT-0400 (EDT)
+[debug] [2018-09-15T20:04:38.178Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-15T20:04:38.187Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-15T20:04:38.187Z] > authorizing via signed-in user
+[debug] [2018-09-15T20:04:38.189Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hack-the-north-c24de  
+ 
+[debug] [2018-09-15T20:04:38.447Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-15T20:04:38.448Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hack-the-north-c24de  
+ 
+[debug] [2018-09-15T20:04:38.788Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/jasonguo/Documents/Programming/Hack-the-North'...
+[info] 
+[debug] [2018-09-15T20:04:39.318Z] Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/logs'
+    at Object.fs.mkdirSync (fs.js:885:18)
+    at Object.assertLogsPath (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/logs.js:65:10)
+    at new Controller (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/cli/controller.js:77:32)
+    at FunctionsEmulator.start (/usr/local/lib/node_modules/firebase-tools/lib/functionsEmulator.js:113:21)
+    at Object.start (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:9:29)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:17:21
+    at arrayMap (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:639:23)
+    at Function.map (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:9556:14)
+    at _serve (/usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:15:7)
+    at Command._action (/usr/local/lib/node_modules/firebase-tools/commands/serve.js:48:12)
+[error] 
+[error] Error: An unexpected error has occurred.
