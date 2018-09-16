@@ -1,5 +1,9 @@
 import * as THREE from '../libraries/three';
 import Camera from './camera.js';
+import {newBox} from './materials.js'
+import {newSphere} from './materials.js'
+import {newCone} from './materials.js'
+
 // Initialize Global Constants
 const backgroundColour = 0xa5f3ff;
 const startingDistance = 10;
@@ -21,7 +25,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("webgl-container").appendChild(renderer.domElement);
 
 // Initialize Global Variables
-let materials = [];
+export let materials = [];
 // materials.push(newBox(3, 3, 3, 0xff00ff, 0, 0, 0));
 
 let cubes = [];
@@ -51,6 +55,8 @@ function animate() {
   }
 
   camera.update();
+  // camera.xAngle += 0.0015;
+  // camera.yAngle += 0.0015;
   renderer.render(scene, camera);
 }
 

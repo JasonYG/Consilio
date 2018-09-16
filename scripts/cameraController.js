@@ -1,3 +1,5 @@
+import Camera from './camera.js';
+
 const speedLimiter = 0.04;
 const cameraLocked = false;
 

@@ -128,7 +128,7 @@ input[type=submit]:hover {
 .image {
   height: 1000px;
   background-image: url("../img/backgroundimage.jpg");
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-size: cover;
   float: left;
 }
@@ -142,4 +142,17 @@ input:checked + .label {
     color: #FF3E55;
     font-weight: 600;
     border-bottom: 4px solid red;
+}
+
+#app {
+  padding-top 5%;
+}
+
+.logo {
+  background-image: url(../img/Logo_Transparent.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  width: 200px;
+  height: 50px;
 }

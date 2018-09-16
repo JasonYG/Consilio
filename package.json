@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
 
-    "build": "webpack --config webpack.conf.js && cp index.html build/ && cp -r css build/ && cp -r img build/",
+    "build": "webpack --config webpack.conf.js && cp workspace.html build/ && cp index.html build/ && cp -r css build/ && cp -r img build/",
     "start:dev": "webpack-dev-server --config ./webpack.conf.js"
   },
   "repository": {
