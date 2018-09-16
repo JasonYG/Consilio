@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    entry: './leapmotion.js',
+  entry: './scripts/leapmotion.js',
   target: 'web',
     output: {
         filename: '[name].bundle.js',

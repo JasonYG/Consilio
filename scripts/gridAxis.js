@@ -1,3 +1,5 @@
+import * as THREE from '../libraries/three';
+import {scene} from './index';
 // Create X Axis
 const xAxisMaterial = new THREE.LineBasicMaterial({
   color: 0xff0000

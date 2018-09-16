@@ -1,9 +1,11 @@
+import * as THREE from '../libraries/three';
+import Camera from './camera.js';
 // Initialize Global Constants
 const backgroundColour = 0xa5f3ff;
 const startingDistance = 10;
 
 // Initialize Scene
-let scene = new THREE.Scene();
+export let scene = new THREE.Scene();
 scene.background = new THREE.Color(backgroundColour);
 
 // Initialize Camera

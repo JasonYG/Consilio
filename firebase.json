@@ -1,20 +1,19 @@
 {
   "hosting": {
+    "predeploy": "npm run build",
     "public": "build",
     "ignore": [
-      ".DS_Store"
+      "firebase.json",
+      "database-rules.json",
+      "storage.rules",
+      "functions"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  "database": {
-    "rules": "database.rules.json"
-  },
-  "storage": {
-    "rules": "storage.rules"
+    "headers": [{
+      "source" : "**/*.@(js|html)",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=0"
+      } ]
+    }]
   }
 }

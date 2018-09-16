@@ -1,4 +1,5 @@
-class Camera extends THREE.PerspectiveCamera {
+import * as THREE from '../libraries/three';
+export default class Camera extends THREE.PerspectiveCamera {
   constructor(fov, size, min, max, x, y, z, hyp) {
     super(fov, size, min, max);
     this.position.x = x;

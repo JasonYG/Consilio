@@ -1,3 +1,5 @@
+import * as THREE from '../libraries/three';
+console.log("btw, importing:", Object.keys(THREE));
 class Position {
   constructor(x, y, z) {
     this.x = x;

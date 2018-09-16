@@ -1,6 +1,12 @@
 import xesto from "xesto-wave-npm"
 const client = xesto('3182202afc174a47b6b6ff5b00893dbe')
 import Palm from './palm';
+require("./libraries/three");
+require("./scripts/materials");
+require("./scripts/camera");
+require("./scripts/cameraController");
+require("./scripts/index")
+require("./scripts/gridAxis")
 
 let palm = new Palm();
 
