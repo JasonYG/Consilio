@@ -9,7 +9,7 @@
       "functions"
     ],
     "headers": [{
-      "source" : "**/*.@(js|html)",
+      "source" : "**/workspace.html",
       "headers" : [ {
         "key" : "Cache-Control",
         "value" : "max-age=0"
