@@ -4,7 +4,7 @@ scene.background = new THREE.Color(0xa5f3ff);
 
 // Initialize Camera
 const originalDistance = 10;
-let camera = new Camera(75, window.innerWidth / window.innerHeight, 0.1, 1000, 0, 0, originalDistance);
+let camera = new Camera(75, window.innerWidth / window.innerHeight, 0.1, 1000, 0, 0, 5, 5);
 camera.lookAt(0, 0, 0);
 
 // Initialize Lighting
@@ -44,17 +44,9 @@ function animate() {
   cube2.rotation.y += 0.01;
   cube3.rotation.x += 0.01;
   cube3.rotation.y += 0.01;
-  // camera.update();
-  // frame++;
-  // let angle = (frame) * (0.5 * Math.PI / 60);
-  // // console.log(angle);
-  // camera.position.set(10 * Math.cos(angle), camera.position.y, 10 * Math.sin(angle));
-  // // console.log(camera.position);
-  // camera.lookAt(0, 0, 0);
 
   camera.update();
   renderer.render(scene, camera);
-
 }
 
 document.addEventListener('keydown', event => {
@@ -81,8 +73,11 @@ document.addEventListener('keydown', event => {
   }
 }, false);
 
+const speedLimiter = 0.03;
+let startX = 0;
 let averageXVel = 0;
 let xPosList = [];
+let startY = 0;
 let averageYVel = 0;
 let yPosList = [];
 let touchObj = null;
@@ -90,6 +85,8 @@ let iterationCount = 0;
 
 window.addEventListener('touchstart', e => {
   touchObj = e.changedTouches[0];
+  startX = parseInt(touchObj.clientX);
+  startY = parseInt(touchObj.clientY)
 }, false);
 
 window.addEventListener('touchmove', e => {
@@ -118,44 +115,18 @@ window.addEventListener('touchmove', e => {
       velYSum += (yPosList[i] - yPosList[i - 1]) / 5;
     }
   }
+  let averageYVel = velYSum / 10;
 
-  // console.log("(" + averageXVel + ", " + averageYVel + ")");
-  console.log(averageXVel > 0.03 ? 0.03 : averageXVel < -0.03 ? -0.03 : averageXVel);
-  console.log(averageYVel > 0.03 ? 0.03 : averageYVel < -0.03 ? -0.03 : averageYVel);
-  camera.rotateX(averageXVel > 0.03 ? 0.03 : averageXVel < -0.03 ? -0.03 : averageXVel);
-  camera.rotateY(averageYVel > 0.03 ? 0.03 : averageYVel < -0.03 ? -0.03 : averageYVel);
+  let swipeAngleRad = Math.atan2(startY - parseInt(touchObj.clientY), startX - parseInt(touchObj.clientX));
+  let swipeAngleDeg = swipeAngleRad * 180 / Math.PI;
+
+  if (Math.abs(swipeAngleDeg) < 45 || Math.abs(swipeAngleDeg) > 135) camera.rotateX(averageXVel, speedLimiter);
+  else if (Math.abs(swipeAngleDeg) >= 45 && Math.abs(swipeAngleDeg) <= 135) camera.rotateY(averageYVel, speedLimiter);
 }, false);
 
 window.addEventListener('touchend', e => {
+  xPosList = [];
+  yPosList = [];
+  iterationCount = 0;
   averageXVel = 0;
 })
-
-
-
-// let startX = 0; // starting x coordinate of touch point
-// let startY = 0; // starting y coordinate of touch point
-// let touchDistX = 0; // distance traveled by touch point in x
-// let touchDistY = 0; // distance traveled by touch point in y
-// let touchObj = null; // Touch object holder
-//
-// window.addEventListener('touchstart', e => {
-//   touchObj = e.changedTouches[0]; // reference first touch point
-//   startX = parseInt(touchObj.clientX); // get x coord of touch point
-//   startY = parseInt(touchObj.clientX); // get x coord of touch point
-//   e.preventDefault(); // prevent default click behavior
-// }, false);
-//
-// window.addEventListener('touchmove', e => {
-//   touchobj = e.changedTouches[0]; // reference first touch point for this event
-//   touchDistX = parseInt(touchobj.clientX) - startX; // calculate dist traveled by touch point
-//   touchDistY = parseInt(touchobj.clientX) - startY; // calculate dist traveled by touch point
-//   if (touchDistX > 20) camera.rotateXTouch(0.1 * touchDistX);
-//   if (touchDistY > 20) camera.rotateY(0.1 * touchDistY);
-//
-//   console.log("Dist X: " + touchDistX + ", Dist Y: " + touchDistY);
-//   e.preventDefault();
-// }, false);
-//
-// window.addEventListener('touchend', e => {
-//   if (touchDistX > 50) camera.xAngle = touchDistX * (MATH.PI / 300);
-// }, false);
