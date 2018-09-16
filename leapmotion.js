@@ -11,6 +11,7 @@ require("./scripts/gridAxis")
 let palm = new Palm();
 
 client.connect().then( controller => {
+  console.log('ee');
   //This is a Leap.Controller object, and we can pass it gesture names to have
   //our app react to gestures!
 
