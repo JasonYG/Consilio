@@ -1,2 +1,2 @@
-# Hack-the-North
-Project for Hack the North
+Hack the North project
+---
