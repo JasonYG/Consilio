@@ -55,10 +55,22 @@ function animate() {
 document.addEventListener('keydown', event => {
   const key = event.key;
 
+  let x = (Math.random() * 10) - 5;
+  let y = (Math.random() * 10) - 5;
+  let z = (Math.random() * 10) - 5;
+
   switch(key) {
-    case 'Enter':
-      console.log("Enter Pressed");
-      newBox(Math.random() * 3, Math.random() * 3, Math.random() * 3, 0xff0000, Math.random() * 5, Math.random() * 5, Math.random() * 5);
+    case 'q':
+      console.log("Creating Box");
+      newBox(Math.random() * 3, Math.random() * 3, Math.random() * 3, 0xff0000, x, y, z);
+      break;
+    case 'w':
+      newSphere(Math.random() * 3, 0xff0000, x, y, z);
+      break;
+    case 'e':
+      newCone(Math.random() * 2, Math.random() * 3, 0xff0000, x, y, z);
+      break;
+    case 'r':
       break;
     case 'Escape':
       console.log("Escape Pressed");

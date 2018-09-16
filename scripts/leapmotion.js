@@ -7,15 +7,31 @@ client.connect().then( controller => {
   //This is a Leap.Controller object, and we can pass it gesture names to have
   //our app react to gestures!
 
-  controller.on("Down", () => {
-    console.log("Woo! Swipe left!");
-    //TODO: Add parenting algorithm
-    //palm.add()
+  controller.on("Grabbing", () => {
+    console.log("Attempting to Grab Object");
+
+    let closestDistance = INFINITY;
+    let closestObjectIndex = null;
+    for (let i = 0; i < materials.length; i++) {
+      let deltaX = materials[i].position.x - palm.position.x;
+      let deltaX = materials[i].position.y - palm.position.y;
+      let deltaX = materials[i].position.z - palm.position.z;
+
+      let distance = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2) + Math.pow(deltaZ, 2));
+      if (distance < closestDistance) closestObjectIndex = i;
+    }
+
+    if (materials[closestObjectIndex] < 100) palm.add(materials[closestObjectIndex]);
+  });
+
+  controller.on("Releasing", () => {
+    console.log("Releasing Object");
+    palm.children = [];
   });
 
   //Allows frames to update properly
-  controller.on('connect', function(){
-    setInterval(function(){
+  controller.on('connect', () => {
+    setInterval(() => {
       let frame = controller.frame();
       if (frame.hands.length > 0) {
         updateHandPosition(frame);
