@@ -1,15 +1,3 @@
-class vector3D {
-  constructor(x, y, z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-  }
-
-  getCoordinates() {
-    console.log("Coord: (" + x + ", " + y + ", " + z + ")");
-  }
-}
-
 class Camera extends THREE.PerspectiveCamera {
   constructor(fov, size, min, max, x, y, z, hyp) {
     super(fov, size, min, max);
