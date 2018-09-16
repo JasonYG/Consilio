@@ -10,7 +10,7 @@ class Position {
   }
 }
 
-class Palm {
+export default class Palm {
   //constructor for Palm
   constructor() {
     this.position = new Position(0, 0, 0);
