@@ -1,6 +1,8 @@
 import xesto from "xesto-wave-npm"
 const client = xesto('3182202afc174a47b6b6ff5b00893dbe')
 
+let palm = new Palm();
+
 client.connect().then( controller => {
   //This is a Leap.Controller object, and we can pass it gesture names to have
   //our app react to gestures!
@@ -22,7 +24,8 @@ client.connect().then( controller => {
   let updateHandPosition = function(frame) {
     //vector with palmPosition
     let palmPosition = frame.hands[0].palmPosition;
-    console.log(palmPosition);
+    palm.updatePosition(palmPosition);
+    console.log(palm);
   }
 
   controller.connect();
