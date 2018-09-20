@@ -8,7 +8,7 @@ The link to our devpost with more information can be found [here](https://devpos
 
 Contributors
 ---
-Aarish Adeel - [@Aarish-A](https://github.com/Aarish-A)
-Jason Guo - @JasonYG
-Rachel Cheng - [@rhtcheng](https://github.com/rhtcheng)
-Bowen Zhu - [@bowenzhu1](https://github.com/bowenzhu1)
+Aarish Adeel - [@Aarish-A](https://github.com/Aarish-A)  
+Jason Guo - @JasonYG  
+Rachel Cheng - [@rhtcheng](https://github.com/rhtcheng)  
+Bowen Zhu - [@bowenzhu1](https://github.com/bowenzhu1)  
